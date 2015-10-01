@@ -19,17 +19,14 @@
             <Label x:Name="labelFirstName" Content="First Name"/>
             <Label x:Name="labelSurname" Content="Surname"/>
             <Label x:Name="labelEmail" Content="Email"/>
-            <Label x:Name="labelTelephone" Content="Telephone"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0" Margin="10,0,10,0" Grid.RowSpan="2">
-            <TextBox x:Name="textBoxFirstName" TextWrapping="Wrap" Margin="0 3 0 0" Text="{Binding Path=FirstName}"/>
-            <TextBox x:Name="textBoxSurname" TextWrapping="Wrap" Margin="0 3 0 0"/>
-            <TextBox x:Name="textBoxEmail" TextWrapping="Wrap" Margin="0 3 0 0"/>
-            <TextBox x:Name="textBoxTelephone" TextWrapping="Wrap" Margin="0 3 0 0"/>
+            <TextBox x:Name="textBoxFirstName" TextWrapping="Wrap" Margin="0 3 0 0" Text="{Binding Path=FirstName}" IsEnabled="False"/>
+            <TextBox x:Name="textBoxSurname" TextWrapping="Wrap" Margin="0 3 0 0" Text="{Binding Path=Surname}" IsEnabled="False"/>
+            <TextBox x:Name="textBoxEmail" TextWrapping="Wrap" Margin="0 3 0 0" Text="{Binding Path=Email}" IsEnabled="False"/>
         </StackPanel>
         <StackPanel x:Name="stackPanelButtons" VerticalAlignment="Stretch" HorizontalAlignment="Right" Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0 0 10 0">
-            <Button x:Name="buttonCancel" Content="Cancel" Margin="0 0 10 0" Width="80"/>
-            <Button x:Name="buttonSubmit" Content="Submit" Width="80" Click="buttonSubmit_Click"/>
+            <Button x:Name="buttonPopulate" Content="Populate" Width="80" Click="buttonPopulate_Click"/>
         </StackPanel>
     </Grid>
 </Window>

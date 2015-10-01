@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AnotherTest
 {
@@ -26,11 +13,15 @@ namespace AnotherTest
             InitializeComponent();
             _person = new Person();
             textBoxFirstName.DataContext = _person;
+            textBoxSurname.DataContext = _person;
+            textBoxEmail.DataContext = _person;
         }
 
-        private void buttonSubmit_Click(object sender, RoutedEventArgs e)
+        private void buttonPopulate_Click(object sender, RoutedEventArgs e)
         {
             _person.FirstName = "Big John";
+            _person.Surname = "Hudson";
+            _person.Email = "big.john.hudson@tvsscs.com";
         }
     }
 }
