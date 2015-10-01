@@ -6,6 +6,16 @@ namespace AnotherTest
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private string _firstName;
+        private string _surname;
+        private string _email;
+
+        public Person(string firstName = "", string surname = "", string email = "")
+        {
+            _firstName = firstName;
+            _surname = surname;
+            _email = email;
+        }
+
         public string FirstName
         {
             get { return _firstName; }
@@ -14,15 +24,11 @@ namespace AnotherTest
                 if (!_firstName.Equals(value))
                 {
                     _firstName = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("FirstName"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(FirstName)));
                 }
             }
         }
 
-        private string _surname;
         public string Surname
         {
             get { return _surname; }
@@ -31,15 +37,11 @@ namespace AnotherTest
                 if (!_surname.Equals(value))
                 {
                     _surname = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Surname"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Surname)));
                 }
             }
         }
 
-        private string _email;
         public string Email
         {
             get { return _email; }
@@ -48,19 +50,9 @@ namespace AnotherTest
                 if (!_email.Equals(value))
                 {
                     _email = value;
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Email"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Email)));
                 }
             }
-        }
-
-        public Person(string firstName = "", string surname = "", string email = "")
-        {
-            _firstName = firstName;
-            _surname = surname;
-            _email = email;
         }
     }
 }
